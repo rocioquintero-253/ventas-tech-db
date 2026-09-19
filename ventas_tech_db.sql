@@ -24,7 +24,7 @@ CREATE TABLE productos (
     precio DECIMAL(10,2) NOT NULL,
     stock INT DEFAULT 0,
     activo TINYINT DEFAULT 1,
-    FOREIGN KEY (id_categoria) REFERENCES dim_categorias(id_categoria)
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 
 CREATE TABLE ventas (
@@ -34,8 +34,8 @@ CREATE TABLE ventas (
     cantidad INT NOT NULL,
     precio_unitario DECIMAL(10,2) NOT NULL,
     fecha_venta DATE NOT NULL,
-    FOREIGN KEY (id_cliente) REFERENCES dim_clientes(id_cliente),
-    FOREIGN KEY (id_producto) REFERENCES dim_productos(id_producto)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
 INSERT INTO categorias VALUES (1, 'Computación', 'Laptops, PCs y monitores');
